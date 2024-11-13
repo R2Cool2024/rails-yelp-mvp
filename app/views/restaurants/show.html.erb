@@ -3,3 +3,11 @@
 <p><%= @restaurant.address %></p>
 <%= link_to "back to list", restaurants_path %>
 <%= link_to "Add review", new_restaurant_review_path(@restaurant) %>
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+<br>
